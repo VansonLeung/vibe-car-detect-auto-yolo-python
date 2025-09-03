@@ -2,7 +2,9 @@
 
 # Example YAML config
 camera:
-  device_index: 0
+  type: "video"  # Options: "video", "camera"
+  source: "test_videos/test video_1.mp4"  # Options: 0 (for webcam) or video file path, e.g.: "test_videos/test video_1.mp4"
+  #source: 0  # Options: 0 (for webcam) or video file path, e.g.: "test_videos/test video_1.mp4"
   resolution: [1280, 720]
 
 detection:

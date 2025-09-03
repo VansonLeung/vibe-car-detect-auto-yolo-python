@@ -1,5 +1,5 @@
 # Main application entry point
-from camera import Camera
+from camera import Camera, VideoSource
 from detection import Detector
 from tracking import Counter
 from traffic_logging import Logger
@@ -10,8 +10,12 @@ import time
 
 if __name__ == "__main__":
     config = Config('config.yaml')
-    camera = Camera(
-        device_index=config.get('camera', 'device_index', 0),
+    
+    type = config.get('camera', 'type', 'camera')
+    camera_class = Camera if type == 'camera' else VideoSource
+    
+    camera = camera_class(
+        source=config.get('camera', 'source', 0),
         resolution=tuple(config.get('camera', 'resolution', [1280, 720]))
     )
     # Use YOLO11L.pt as the checkpoint file for YOLOv11
