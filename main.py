@@ -42,8 +42,17 @@ if __name__ == "__main__":
             # Draw detection overlays on frame
             class_names = {1: 'bicycle', 2: 'car', 3: 'motorcycle', 5: 'bus', 6: 'train', 7: 'truck'}
             frame_with_overlays = detector.draw_overlays(frame, detections, class_names)
+
+            line = [(690, 400), (1130, 330)]
+            cv2.line(frame_with_overlays, line[0], line[1], (0, 0, 255), 2)
+
+            count = counter.update(detections, line)
             
-            count = counter.update(detections, prev_positions)
+            res = counter.get_crossed_class_count_representation()
+            for class_id, count in res.items():
+                label = class_names.get(class_id, f"Class {class_id}")
+                cv2.putText(frame, f"{label}: {count}", (10, 30 + class_id * 30), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0,255,0), 2)
+
             logger.log({
                 'timestamp': time.time(),
                 'count': count,
