@@ -1,0 +1,22 @@
+# Configuration file for Road Car Traffic Counter / Detection System
+
+# Example YAML config
+camera:
+  device_index: 0
+  resolution: [1280, 720]
+
+detection:
+  model: yolov11
+  confidence_threshold: 0.5
+
+counting:
+  line_position: [600, 400]
+  direction: 'vertical'
+
+logging:
+  output_csv: 'traffic_log.csv'
+  enable_encryption: true
+
+uiux:
+  dashboard_port: 8050
+  theme: 'bootstrap'

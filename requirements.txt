@@ -1,0 +1,12 @@
+"""
+Road Car Traffic Counter / Detection System - Requirements
+"""
+
+# Required packages for this project
+opencv-python>=4.8.0
+ultralytics>=8.0.0
+pandas>=2.0.0
+pyyaml>=6.0
+dash>=2.0.0
+dash-bootstrap-components>=1.0.0
+numpy>=1.24.0
