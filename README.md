@@ -11,7 +11,7 @@ This is the main entry point for the project. See `/doc` for architecture, requi
    ```
 2. Install dependencies:
    ```sh
-   pip install opencv-python ultralytics dash dash-bootstrap-components pandas
+   pip install -r requirements.txt
    ```
 3. Run the main application (to be implemented):
    ```sh
@@ -23,15 +23,14 @@ This is the main entry point for the project. See `/doc` for architecture, requi
 - `camera.py` — Camera input module
 - `detection.py` — YOLOv11 detection module
 - `tracking.py` — Counting & tracking module
-- `uiux/` — Plotly Dash dashboard
-- `logging.py` — Data logging module
+- `traffic_logging.py` — Data logging module
 - `config.py` — Configuration management
 - `tests/` — Unit and integration tests
 - `doc/` — Documentation and task breakdowns
 
 ## Setup Tasks
 - [x] Initialize Python project structure
-- [ ] Set up virtual environment
-- [ ] Install required packages
-- [ ] Set up Git repository
-- [ ] Create initial README and architecture documentation
+- [x] Set up virtual environment
+- [x] Install required packages
+- [x] Set up Git repository
+- [x] Create initial README and architecture documentation
